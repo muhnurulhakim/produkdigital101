@@ -7,22 +7,21 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <!-- Include the script that builds the page and powers Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
     <script>
       var PostPreview = createClass({
         render: function() {
           var entry = this.props.entry;
-          var image = entry.getIn(['data', 'cover_image']);
-          var gallery = entry.getIn(['data', 'gallery_images']);
+          var cover_image = entry.getIn(['data', 'cover_image']);
+          var gallery_images = entry.getIn(['data', 'gallery_images']);
           var description = this.props.widgetFor('description');
           var details = this.props.widgetsFor('details');
           return h('div', {},
             h('h1', {}, entry.getIn(['data', 'name'])),
-            image && h('img', {src: this.props.getAsset(image).toString()}),
-            gallery && gallery.map(function(galleryImage) {
+            cover_image && h('img', {src: this.props.getAsset(cover_image).toString()}),
+            gallery_images && gallery_images.map(function(galleryImage) {
               return h('img', {src: this.props.getAsset(galleryImage).toString()})
-            }.bind(this)),
+            }),
             description && h('div', {}, description),
             details && details.map(function(detail) {
               return h('div', {}, detail);
