@@ -1,0 +1,68 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "_products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Cover Image", name: "cover_image", widget: "image"}
+      - {label: "Gallery Images", name: "gallery_images", widget: "image", allow_add: true}
+      - {label: "Details", name: "details", widget: "markdown"}
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Include the following content for Netlify's basic authentication
+authentication:
+  backend:
+    name: git-gateway
+    branch: main
+    base_url: https://muina-duck-com.netlify.app/
+    repo: https://github.com/mariusandree/my-digital-products
+local_backend: true
+
+site_id: my-digital-products
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "_products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Cover Image", name: "cover_image", widget: "image"}
+      - {label: "Gallery Images", name: "gallery_images", widget: "image", allow_add: true}
+      - {label: "Details", name: "details", widget: "markdown"}
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Basic Auth  
+production:
+  backend:
+    name: git-gateway
+    accept_roles:
+      - admin
+    auth_force_descrypt: true
+    users:
+      - name: Muina
+        email: muina@duck.com
+        hash: $2y$10$fTjuhVtRKVMdIxD21qsvFOeWHQNQvmCjI6bO3C1tBQLzEhWXPULra
+        description: Admin Duck

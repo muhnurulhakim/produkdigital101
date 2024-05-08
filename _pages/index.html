@@ -1,0 +1,10 @@
+---
+layout: default
+title: Produk Digital Saya
+---
+
+<div class="product-grid">
+  {% for product in site.products %}
+  {% include product-card.html %}
+  {% endfor %}
+</div>

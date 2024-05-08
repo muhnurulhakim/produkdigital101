@@ -1,0 +1,11 @@
+<div class="product-card">
+  <a href="{{ product.url | relative_url }}">
+    <div class="product-card-image lazy-load">
+      <img data-src="{{ product.cover_image }}" alt="{{ product.name }}" class="lazyload" />
+    </div>
+    <div class="product-info">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+    </div>
+  </a>
+</div>

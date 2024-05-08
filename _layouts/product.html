@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="product-details">
+  <div class="carousel">
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          {% for image in page.gallery_images %}
+          <li class="glide__slide">
+            <img data-src="{{ image }}" alt="{{ page.name }}" class="lazyload" />
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+          &lt;
+        </button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+          &gt;
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="product-info">
+    <h1>{{ page.name }}</h1>
+    {{ page.details | markdownify }}
+    <button class="buy-now">Beli Sekarang</button>
+  </div>
+</div>
