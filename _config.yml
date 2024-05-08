@@ -1,6 +1,6 @@
 title: My Digital Products
-url: "https://example.github.io"
-baseurl: "/my-digital-products"
+url: "https://produkdigital101.netlify.app"
+baseurl: ""
 
 collections:
   products:
