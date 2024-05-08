@@ -21,19 +21,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-compress-html
-  - jekyll-remote-theme
-
-remote_theme: jekyll/minima
-
-compress_html:
-  clippings: all
-  comments: ["<!-- Comments to ignore -->"]
-  endings: all
-  ignore:
-    envs: [local]
-  blanklines: true
-  profile: false
-  startings: [html, head, body]
 
 sass:
   style: compressed
