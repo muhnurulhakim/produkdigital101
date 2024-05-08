@@ -28,11 +28,11 @@ authentication:
   backend:
     name: git-gateway
     branch: main
-    base_url: https://muina-duck-com.netlify.app/
-    repo: https://github.com/mariusandree/my-digital-products
+    base_url: https://produkdigital101.netlify.app/
+    repo: https://github.com/muhnurulhakim/produkdigital101
 local_backend: true
 
-site_id: my-digital-products
+site_id: produkdigital101
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
